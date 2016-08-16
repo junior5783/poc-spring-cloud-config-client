@@ -1,4 +1,4 @@
-package com.rpicloud;
+package com.qualifacts.carelogic.client;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
