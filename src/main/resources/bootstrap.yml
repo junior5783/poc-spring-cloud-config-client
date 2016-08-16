@@ -1,0 +1,8 @@
+spring:  
+  application:
+    name: server,context
+  profiles:
+    active: prd
+  cloud:
+    config:
+      uri: http://localhost:8888
