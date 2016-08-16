@@ -9,13 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by mixmox on 04/04/16.
- */
 @RefreshScope
 @Component
 @RestController
-public class Greeter {
+public class Poperties {
 
     @Value("${soa.server}")
     String soaServer;
