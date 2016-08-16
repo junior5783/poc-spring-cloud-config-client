@@ -17,24 +17,34 @@ import java.util.List;
 @RestController
 public class Greeter {
 
-    @Value("${soa.sever}")
-    String greeting;
+    @Value("${soa.server}")
+    String soaServer;
+    
+    @Value("${mule.server}")
+    String muleServer;
     
     @Value("${soa.context.product}")
-    String contextProduct;
+    String contextProductSoa;
     
-    @Value("${soa.context.product}")
-    String contextFull;
+    @Value("${soa.context.loan-management}")
+    String contextLoanManagementSoa;
+    
+    @Value("${mule.context.product}")
+    String contextProductMule;
+    
+    @Value("${mule.context.loan-management}")
+    String contextLoanManagementMule;
+   
 
-    @Value("${soa.port}")
-    String port;
-
-    @RequestMapping(value = "/", produces = "application/json")
+    @RequestMapping(value = "/properties", produces = "application/json")
     public List<String> index(){
         List<String> env = Arrays.asList(
-                "message.greeting is: " + greeting,
-                "server.port is: " + port,
-                "Context product is:"+contextProduct
+                "SOA Server is: " + soaServer,
+                "MULE Server is: " + muleServer,
+                "Context Product SOA is: "+contextProductSoa,
+                "Context Loan Management SOA is: "+contextLoanManagementSoa,
+                "Context Product MULE is: "+contextProductMule,
+                "Context Loan Management MULE is: "+contextLoanManagementMule
         );
         return env;
     }
